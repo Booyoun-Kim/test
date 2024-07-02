@@ -29,7 +29,7 @@ appendConsoleMessage(themeSecondaryBgColor);
 document.documentElement.style.backgroundColor = themeSecondaryBgColor;
 
 // window.Telegram.WebApp MainButton
-window.Telegram.WebApp.MainButton.text = "테스트 버튼123";
+window.Telegram.WebApp.MainButton.text = "테스트 버튼12345";
 window.Telegram.WebApp.MainButton.show();
 
 window.Telegram.WebApp.isExpanded = true;
