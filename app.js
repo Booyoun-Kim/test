@@ -1,5 +1,4 @@
 const actionButton = document.getElementById('actionButton');
-
 actionButton.addEventListener('click', () => {
     alert("Good11");
 });
@@ -26,10 +25,15 @@ appendConsoleMessage(themeBgColor);
 appendConsoleMessage(themeSecondaryBgColor);
 
 // html 배경에 var(--tg-theme-secondary-bg-color) 색상 적용
-document.documentElement.style.backgroundColor = themeSecondaryBgColor;
+document.documentElement.style.backgroundColor = themeBgColor;
 
 // window.Telegram.WebApp MainButton
 window.Telegram.WebApp.MainButton.text = "테스트 버튼12345";
 window.Telegram.WebApp.MainButton.show();
 
-window.Telegram.WebApp.isExpanded = true;
+const scanButton = document.getElementById('scanButton');
+scanButton.addEventListener('click', () => {
+    window.Telegram.WebApp.showScanQrPopup(params["테스트987", function() {
+        appendConsoleMessage("scan qr popup");
+    }]);
+});
