@@ -2,6 +2,10 @@ html {
     background-color: var(--tg-theme-bg-color);
 }
 
+body {
+    font-family: sans-serif;
+}
+
 .mainTitle {
     color: var(--tg-theme-text-color);
 }
