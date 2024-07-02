@@ -25,6 +25,9 @@ appendConsoleMessage("테스트111");
 appendConsoleMessage(themeBgColor);
 appendConsoleMessage(themeSecondaryBgColor);
 
+// html 배경에 var(--tg-theme-secondary-bg-color) 색상 적용
+document.documentElement.style.backgroundColor = themeSecondaryBgColor;
+
 // window.Telegram.WebApp MainButton
 window.Telegram.WebApp.MainButton.text = "테스트 버튼123";
 window.Telegram.WebApp.MainButton.show();
