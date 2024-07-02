@@ -1,0 +1,13 @@
+html {
+    background-color: var(--tg-theme-bg-color);
+}
+
+.mainTitle {
+    color: var(--tg-theme-text-color);
+}
+
+#actionButton {
+    background-color: var(--tg-theme-button-bg-color);
+    color: var(--tg-theme-button-text-color);
+}
+
