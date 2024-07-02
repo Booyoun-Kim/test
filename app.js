@@ -1,5 +1,7 @@
 const actionButton = document.getElementById('actionButton');
 
 actionButton.addEventListener('click', () => {
-    alert('Good');
+    alert(window.Telegram.WebApp.bg_color);
 });
+
+// window.Telegram.WebApp
