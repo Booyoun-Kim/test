@@ -1,6 +1,6 @@
 const actionButton = document.getElementById('actionButton');
 actionButton.addEventListener('click', () => {
-    window.Telegram.WebApp.impactOccurred("medium");
+    window.Telegram.WebApp.HapticFeedback.impactOccurred("medium");
     window.Telegram.WebApp.showAlert("Good22");
     // alert("Good11");
 });
@@ -37,16 +37,19 @@ function darkenColor(color, percent) {
     return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
 }
 
-if (themeBgColor === themeSecondaryBgColor || themeBgColor !== undefined) {
-    // document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 2.3))
-    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 10));
-}
-
 // html 배경에 var(--tg-theme-secondary-bg-color) 색상 적용
 document.documentElement.style.backgroundColor = themeSecondaryBgColor;
 
+if (themeBgColor === themeSecondaryBgColor || themeBgColor !== undefined) {
+    // document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 2.3))
+    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 23));
+    themeSecondaryBgColor = getCSSVariable('--tg-theme-secondary-bg-color');
+
+    document.documentElement.style.backgroundColor = themeSecondaryBgColor;
+}
+
 // window.Telegram.WebApp MainButton
-window.Telegram.WebApp.MainButton.text = "테스트 버튼6789";
+window.Telegram.WebApp.MainButton.text = "테스트 버튼012";
 window.Telegram.WebApp.MainButton.show();
 
 const scanButton = document.getElementById('scanButton');
