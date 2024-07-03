@@ -28,17 +28,23 @@ appendConsoleMessage(themeSecondaryBgColor);
 document.documentElement.style.backgroundColor = themeBgColor;
 
 // window.Telegram.WebApp MainButton
-window.Telegram.WebApp.MainButton.text = "테스트 버튼12345";
+window.Telegram.WebApp.MainButton.text = "테스트 버튼678";
 window.Telegram.WebApp.MainButton.show();
 
 const scanButton = document.getElementById('scanButton');
 scanButton.addEventListener('click', () => {
-    window.Telegram.WebApp.showScanQrPopup(params["테스트987", function() {
+    window.Telegram.WebApp.showScanQrPopup("테스트987", function() {
         appendConsoleMessage("scan qr popup");
-    }]);
+
+        // 5초 후에 닫기
+        setTimeout(() => {
+            window.Telegram.WebApp.closeScanQrPopup();
+        }, 5000);
+    });
 });
 
 const klipLinkButton = document.getElementById('klipLinkButton');
 klipLinkButton.addEventListener('click', () => {
-    window.Telegram.WebApp.openLink("kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
+    // window.Telegram.WebApp.openLink("kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
+    window.Telegram.WebApp.openLink("https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
 });
