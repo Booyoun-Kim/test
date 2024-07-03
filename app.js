@@ -64,3 +64,5 @@ klipLinkButton.addEventListener('click', () => {
     // window.Telegram.WebApp.openLink("kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
     window.Telegram.WebApp.openLink("https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
 });
+
+window.Telegram.WebApp.expand();
