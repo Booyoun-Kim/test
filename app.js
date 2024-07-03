@@ -24,8 +24,24 @@ appendConsoleMessage("테스트111");
 appendConsoleMessage(themeBgColor);
 appendConsoleMessage(themeSecondaryBgColor);
 
+// function darkenColor: 색상 어둡게 만들기
+function darkenColor(color, percent) {
+    let num = parseInt(color.slice(1), 16);
+    let amt = Math.round(2.55 * percent);
+    let R = (num >> 16) + amt;
+    let B = (num >> 8 & 0x00FF) + amt;
+    let G = (num & 0x0000FF) + amt;
+
+    return "#" + (0x1000000 + (R < 255 ? R < 1 ? 0 : R : 255) * 0x10000 + (B < 255 ? B < 1 ? 0 : B : 255) * 0x100 + (G < 255 ? G < 1 ? 0 : G : 255)).toString(16).slice(1);
+}
+
 // html 배경에 var(--tg-theme-secondary-bg-color) 색상 적용
-document.documentElement.style.backgroundColor = themeBgColor;
+document.documentElement.style.backgroundColor = themeSecondaryBgColor;
+
+if (themeBgColor === themeSecondaryBgColor && themeBgColor !== undefined) {
+    // document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 2.3))
+    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 10));
+}
 
 // window.Telegram.WebApp MainButton
 window.Telegram.WebApp.MainButton.text = "테스트 버튼678";
