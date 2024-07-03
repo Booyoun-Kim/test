@@ -37,3 +37,8 @@ scanButton.addEventListener('click', () => {
         appendConsoleMessage("scan qr popup");
     }]);
 });
+
+const klipLinkButton = document.getElementById('klipLinkButton');
+klipLinkButton.addEventListener('click', () => {
+    window.Telegram.WebApp.openLink("kakaotalk://klipwallet/open?url=https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
+});
