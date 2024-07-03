@@ -40,9 +40,9 @@ function darkenColor(color, percent) {
 // html 배경에 var(--tg-theme-secondary-bg-color) 색상 적용
 document.documentElement.style.backgroundColor = themeSecondaryBgColor;
 
-if (themeBgColor === themeSecondaryBgColor || themeBgColor !== undefined) {
+if (themeBgColor === themeSecondaryBgColor) {
     // document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 2.3))
-    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 23));
+    document.documentElement.style.setProperty('--tg-theme-secondary-bg-color', darkenColor(themeBgColor, 10));
     themeSecondaryBgColor = getCSSVariable('--tg-theme-secondary-bg-color');
 
     document.documentElement.style.backgroundColor = themeSecondaryBgColor;
