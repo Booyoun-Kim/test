@@ -53,8 +53,7 @@ window.Telegram.WebApp.MainButton.text = "테스트 버튼012";
 window.Telegram.WebApp.MainButton.show();
 
 // WebAppInitData
-appendConsoleMessage(window.Telegram.WebApp.initData);
-
+appendConsoleMessage(decodeURI(window.Telegram.WebApp.initData));
 
 const scanButton = document.getElementById('scanButton');
 scanButton.addEventListener('click', () => {
@@ -75,8 +74,16 @@ klipLinkButton.addEventListener('click', () => {
     window.Telegram.WebApp.openLink("https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
 });
 
+const sendTxHashButton = document.getElementById('sendTxHashButton');
+sendTxHashButton.addEventListener('click', () => {
+    window.Telegram.WebApp.openLink("https://t.me/booyoun?text=https://etherscan.io/tx/0x4bf140dccc789c27cc386423be25f26211f65d7c13e977616ae0c2afe2be6ac6");
+});
+
 window.Telegram.WebApp.expand();
+
+window.Telegram.WebApp.disableVerticalSwipes();
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     appendConsoleMessage("MainButtonClicked");
 });
+
