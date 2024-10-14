@@ -78,15 +78,15 @@ klipLinkButton.addEventListener('click', () => {
     window.Telegram.WebApp.openLink("https://klipwallet.com/?target=/a2a?request_key=b4266533-a290-4fae-b3d6-64454c169812");
 });
 
-const sendTxHashButton = document.getElementById('sendTxHashButton1');
+const sendTxHashButton = document.getElementById('sendTxHashButton');
 sendTxHashButton.addEventListener('click', () => {
     appendConsoleMessage("Clicked sendTxHashButton");
     window.Telegram.WebApp.openTelegramLink("https://t.me/booyoun?text=https://etherscan.io/tx/0x4bf140dccc789c27cc386423be25f26211f65d7c13e977616ae0c2afe2be6ac6");
 });
 
-const sendTxHashButton2 = document.getElementById('sendTxHashButton2');
-sendTxHashButton2.addEventListener('click', () => {
-    appendConsoleMessage("Clicked sendTxHashButton2");
+const shareTxHashButton = document.getElementById('shareTxHashButton');
+shareTxHashButton.addEventListener('click', () => {
+    appendConsoleMessage("Clicked shareTxHashButton");
     window.Telegram.WebApp.openTelegramLink("https://t.me/share/url?url=https://etherscan.io/tx/0x4bf140dccc789c27cc386423be25f26211f65d7c13e977616ae0c2afe2be6ac6");
 });
 
