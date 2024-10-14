@@ -90,8 +90,16 @@ shareTxHashButton.addEventListener('click', () => {
     window.Telegram.WebApp.openTelegramLink("https://t.me/share/url?url=https://etherscan.io/tx/0x4bf140dccc789c27cc386423be25f26211f65d7c13e977616ae0c2afe2be6ac6");
 });
 
+const checkUserNameButton = document.getElementById('checkUserNameButton');
+checkUserNameButton.addEventListener('click', () => {
+    appendConsoleMessage("Clicked checkUserNameButton");
+    window.Telegram.account.checkUsername("booyoun", function(result) {
+        appendConsoleMessage("checkUsername result: " + result);
+    });
+});
 
 
+// window.Telegram.account.checkUsername
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     appendConsoleMessage("MainButtonClicked");
