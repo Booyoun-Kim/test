@@ -1,3 +1,7 @@
+window.Telegram.WebApp.expand();
+
+window.Telegram.WebApp.disableVerticalSwipes();
+
 const actionButton = document.getElementById('actionButton');
 actionButton.addEventListener('click', () => {
     window.Telegram.WebApp.HapticFeedback.impactOccurred("medium");
@@ -87,9 +91,7 @@ sendTxHashButton2.addEventListener('click', () => {
 });
 
 
-window.Telegram.WebApp.expand();
 
-window.Telegram.WebApp.disableVerticalSwipes();
 
 Telegram.WebApp.onEvent("mainButtonClicked", function() {
     appendConsoleMessage("MainButtonClicked");
