@@ -52,11 +52,16 @@ if (themeBgColor === themeSecondaryBgColor) {
 window.Telegram.WebApp.MainButton.text = "테스트 버튼012";
 window.Telegram.WebApp.MainButton.show();
 
+// WebAppInitData
+appendConsoleMessage(window.Telegram.WebApp.initData);
+
+
 const scanButton = document.getElementById('scanButton');
 scanButton.addEventListener('click', () => {
-    window.Telegram.WebApp.showScanQrPopup("test9870", function() {
-        appendConsoleMessage("scan qr popup");
+    appendConsoleMessage("Start to scan qr");
 
+    window.Telegram.WebApp.showScanQrPopup("test9870", function() {
+        
         // 5초 후에 닫기
         setTimeout(() => {
             window.Telegram.WebApp.closeScanQrPopup();
@@ -71,3 +76,7 @@ klipLinkButton.addEventListener('click', () => {
 });
 
 window.Telegram.WebApp.expand();
+
+Telegram.WebApp.onEvent("mainButtonClicked", function() {
+    appendConsoleMessage("MainButtonClicked");
+});
